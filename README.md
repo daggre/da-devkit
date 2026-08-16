@@ -3,9 +3,17 @@
 **In-game development tools and an animation system for RedM.** Build scenes, author
 animations, and place props from inside the game — then ship what you built.
 
-> _[ GIF: da_dev object editor placing and rotating a prop ]_
-> _[ GIF: da_anims menu chaining a scenario ]_
-> _[ GIF: da_dev animation editor exporting a config ]_
+![The da_anims menu — browsing scenarios and chaining into a campfire animation](docs/media/anim.gif)
+
+*Press **X** in game: browse context-aware scenarios and chain them together.*
+
+![The da_dev animation editor — scenario tree, prop attachment and a live timeline](docs/media/anim-devkit.gif)
+
+*Author a scenario in game — states, prop attachment, timeline — and export the config.*
+
+![The da_dev object editor — spawning a prop and placing it with the transform gizmo](docs/media/obj-devkit.gif)
+
+*Spawn anything, then place it with the transform gizmo.*
 
 Free and open source. No escrow, no keymaster, no license key.
 
