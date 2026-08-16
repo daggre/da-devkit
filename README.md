@@ -40,7 +40,7 @@ da_log  ──►  da_lib  ──►  everything else
 |---|---|---|
 | **[da_log](https://github.com/daggre/da_log)** | 1.0.0 | Level-based logging with colored output and runtime config. Tiny. Required. |
 | **[da_lib](https://github.com/daggre/da_lib)** | 1.0.0 | The shared library — modes, conditions, animation, drawing, entities, input, NUI. Required. |
-| **[da_dev](https://github.com/daggre/da_dev)** ⚠️ | 1.0.0 | The dev kit. Object editor, animation editor, freecam, placement gizmo, all through a web UI. **Deny-by-default — see [below](#dev-tools-on-a-live-server).** |
+| **[da_dev](https://github.com/daggre/da_dev)** | 1.0.0 | The dev kit. Object editor, animation editor, freecam, placement gizmo, all through a web UI. Off by default — [dev servers only](#running-the-dev-tools). |
 | **[da_anims](https://github.com/daggre/da_anims)** | 1.0.0 | Animation scenario system. Over 100 scenarios, keyboard menu, availability that reacts to what your character is doing. |
 | **[da_props](https://github.com/daggre/da_props)** | 1.0.0 | Custom prop models (tipis, wikiups, ini-pi structures). Stream-only, no code. |
 | **[da_game](https://github.com/daggre/da_game)** | 1.0.0 | HUD context, base game mode, world and ped density settings. |
@@ -83,32 +83,31 @@ Full detail in **[docs/INSTALL.md](docs/INSTALL.md)**.
 
 ---
 
-## Dev tools on a live server
+## Running the dev tools
 
-`da_dev` gives whoever can open it freecam, teleport, entity spawning and scene
-editing. That is why it ships **deny-by-default**: installing it grants nobody
-anything, and there is a hard kill switch for production.
+`da_dev` is a development kit — editors, freecam, a placement gizmo. It's for building
+things, not for playing on, so it ships **off by default** and you turn it on where you
+want it.
 
 ```cfg
-# production — the resource stops itself at boot and is never sent to clients
+# live server — nothing to do, 0 is the default
 setr da_dev_enabled 0
 
-# development
+# development server
 setr da_dev_enabled 1
 add_ace group.admin da_dev allow
 ```
 
-This is what lets the *same* `[da]` folder deploy to your dev and production servers
-unchanged. Read **[docs/SECURITY.md](docs/SECURITY.md)** before deploying `da_dev`
-anywhere players can reach — in particular, the difference between the kill switch
-(a real boundary) and the ACE check (advisory).
+That means one `[da]` folder deploys to both machines unchanged — no second copy, and
+nothing to remember to strip out. Details, including how to grant access to specific
+people, are in **[docs/DEV-TOOLS.md](docs/DEV-TOOLS.md)**.
 
 ---
 
 ## Documentation
 
 - **[Install guide](docs/INSTALL.md)** — full setup, for server owners and developers
-- **[Dev tools on a live server](docs/SECURITY.md)** — the dev/prod split
+- **[Running the dev tools](docs/DEV-TOOLS.md)** — turning `da_dev` on, and who can use it
 - **[Releasing](docs/RELEASING.md)** — versioning and release process for maintainers
 
 Each resource has its own README. For writing animations, start with

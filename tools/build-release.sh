@@ -76,7 +76,7 @@ done
 
 # Ships as da_resources.cfg so `exec resources/[da]/da_resources.cfg` works as-is.
 cp "$ROOT/da_resources.cfg.example" "$STAGE/da_resources.cfg"
-cp "$ROOT/docs/SECURITY.md" "$STAGE/SECURITY.md"
+cp "$ROOT/docs/DEV-TOOLS.md" "$STAGE/DEV-TOOLS.md"
 
 cat > "$STAGE/README.txt" <<EOF
 da devkit — bundle $VERSION
@@ -88,8 +88,8 @@ da devkit — bundle $VERSION
 
 3. Restart the server. Press X in game for the animation menu.
 
-da_dev is included but DISABLED by default — it stops itself at boot and is never
-sent to clients. Read SECURITY.md before turning it on.
+da_dev is a devkit and is off by default — it's for building things rather than
+playing on. See DEV-TOOLS.md to turn it on for a development server.
 
 Docs and releases:  https://github.com/$GH_ORG/da-devkit
 Help and questions: https://discord.com/invite/JgteBpXGaA  (da.dev Discord)
@@ -114,7 +114,7 @@ your \`server.cfg\`:
 exec resources/[da]/da_resources.cfg
 \`\`\`
 
-\`da_dev\` is included but disabled by default. See \`SECURITY.md\` in the bundle.
+\`da_dev\` is a devkit and is off by default. See \`DEV-TOOLS.md\` in the bundle.
 
 ### Included
 

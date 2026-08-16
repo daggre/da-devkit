@@ -103,10 +103,8 @@ you use.
 
 ## Enabling the dev tools
 
-`da_dev` **is** in the bundle, and is deny-by-default: at `da_dev_enabled 0` it stops
-itself at boot and is never sent to connecting clients. That is what makes it safe to
-ship in the same folder you deploy to production. Read [SECURITY.md](SECURITY.md)
-first — the short version:
+`da_dev` is in the bundle but off by default, so it ships happily in the same folder you
+deploy to a live server. On your development server, turn it on:
 
 ```cfg
 setr da_dev_enabled 1
@@ -115,10 +113,12 @@ add_ace group.admin da_dev allow
 
 Then press **Z** in game to open the dev tree.
 
-If nothing happens, you are not authorized. Check the server console at startup for the
-`da_dev` line, and confirm your identifier is in `group.admin`. On a solo local server
-where you have no ACE groups set up, `setr da_dev_enabled 2` allows everyone — never
-use that where players can connect.
+If nothing happens, you haven't been granted access yet — check the server console at
+startup for the `da_dev` line, and confirm your identifier is in `group.admin`. On a
+local box where you haven't set up ACE groups, `setr da_dev_enabled 2` allows everyone.
+
+More detail, including granting access to specific people, is in
+[DEV-TOOLS.md](DEV-TOOLS.md).
 
 ---
 

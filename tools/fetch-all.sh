@@ -48,6 +48,6 @@ echo "to your server.cfg:"
 echo
 echo "  exec resources/[da]/da_resources.cfg"
 echo
-echo "da_dev is deny-by-default. To enable on a dev server:"
+echo "da_dev is off by default. To enable on a development server:"
 echo "  setr da_dev_enabled 1"
 echo "  add_ace group.admin da_dev allow"

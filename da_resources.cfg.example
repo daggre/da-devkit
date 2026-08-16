@@ -11,19 +11,19 @@
 
 
 # --- development tools ----------------------------------------------------
-# READ SECURITY.md BEFORE CHANGING THIS.
+# da_dev is a devkit — editors, freecam, a placement gizmo. It's for building
+# things rather than playing on, so it's off by default and you turn it on where
+# you want it. That way this one file works on both your dev and live servers.
 #
-# da_dev grants freecam, teleport, entity spawning and scene editing. It is
-# deny-by-default: at 0 the resource stops itself at boot and is never sent to
-# connecting clients, so the same [da] folder is safe on dev and production.
+# See DEV-TOOLS.md for the detail.
 #
-#   0  (default) resource stops at boot.            <- production
+#   0  (default) doesn't load.                      <- live server
 #   1            runs, each player needs the ACE.   <- shared dev server
-#   2            runs, everyone allowed.            <- solo/local dev only
+#   2            runs, everyone allowed.            <- your own local box
 
 setr da_dev_enabled 0
 
-# On a shared dev server, grant per player:
+# At level 1, grant access per player:
 #add_ace group.admin da_dev allow
 #add_ace identifier.license:PUT_LICENSE_HERE da_dev allow
 
