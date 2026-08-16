@@ -94,8 +94,16 @@ sent to clients. Read SECURITY.md before turning it on.
 https://github.com/$GH_ORG/da-devkit
 EOF
 
-# Release notes stub with the exact versions this bundle contains.
-cat > "$DIST/NOTES-$VERSION.md" <<EOF
+# Release notes stub with the exact versions this bundle contains. Written only if the
+# notes do not already exist — rebuilding a bundle must never discard notes you wrote by
+# hand. Delete the file if you want it regenerated.
+NOTES="$DIST/NOTES-$VERSION.md"
+if [[ -f "$NOTES" ]]; then
+    echo "==> keeping existing $(basename "$NOTES") (delete it to regenerate)"
+    NOTES="/dev/null"
+fi
+
+cat > "$NOTES" <<EOF
 ## devkit bundle $VERSION
 
 Download \`da-devkit-$VERSION.zip\`, unzip into \`resources/\`, then add one line to
