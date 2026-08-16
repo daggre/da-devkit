@@ -1,2 +1,5 @@
 build/
 dist/
+
+# recording scratch — raw captures are not committed
+raw/
