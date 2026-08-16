@@ -83,14 +83,36 @@ git push origin main --follow-tags
 Then create the GitHub Release. Pushing the tag is not enough — the tag makes the
 release reproducible, the Release *page* is what users actually see and download.
 
+### All repos at once (preferred)
+
+```bash
+# one-time setup
+sudo apt install gh
+gh auth login          # choose SSH, it will reuse your existing key
+
+# then, from the da-devkit repo
+tools/create-releases.sh 1.0.0 2026.08
+```
+
+That creates a Release on each resource repo using **its own `CHANGELOG.md` entry** as
+the notes, then tags this repo `2026.08` and creates the bundle release with
+`da-devkit-2026.08.zip` attached. Notes and changelog can't drift apart because they are
+the same text.
+
+It is idempotent: a repo that already has the release is skipped, so re-running after a
+failure only retries what's missing.
+
+### One repo by hand
+
 ```bash
 gh release create v1.0.0 --title "v1.0.0" --notes-file CHANGELOG.md
 ```
 
-The `gh` CLI is not installed on this machine. Either install it
-(`sudo apt install gh && gh auth login`), or do it on the web:
+### Without gh
+
 **repo → Releases → Draft a new release → pick the tag → paste the CHANGELOG entry →
-publish**.
+publish**. For the bundle release, attach `dist/da-devkit-<bundle>.zip` before
+publishing.
 
 GitHub attaches source zips automatically. For a single resource that is enough — the
 zip unpacks to `da_lib-1.0.0/`, which the user renames to `da_lib`. Slightly annoying,
