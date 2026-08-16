@@ -33,7 +33,7 @@ da_log  ──►  da_lib  ──►  everything else
 | **[da_log](https://github.com/daggre/da_log)** | 1.0.0 | Level-based logging with colored output and runtime config. Tiny. Required. |
 | **[da_lib](https://github.com/daggre/da_lib)** | 1.0.0 | The shared library — modes, conditions, animation, drawing, entities, input, NUI. Required. |
 | **[da_dev](https://github.com/daggre/da_dev)** ⚠️ | 1.0.0 | The dev kit. Object editor, animation editor, freecam, placement gizmo, all through a web UI. **Deny-by-default — see [below](#dev-tools-on-a-live-server).** |
-| **[da_anims](https://github.com/daggre/da_anims)** | 1.0.0 | Animation scenario system. 128 scenarios, keyboard menu, availability that reacts to what your character is doing. |
+| **[da_anims](https://github.com/daggre/da_anims)** | 1.0.0 | Animation scenario system. Over 100 scenarios, keyboard menu, availability that reacts to what your character is doing. |
 | **[da_props](https://github.com/daggre/da_props)** | 1.0.0 | Custom prop models (tipis, wikiups, ini-pi structures). Stream-only, no code. |
 | **[da_game](https://github.com/daggre/da_game)** | 1.0.0 | HUD context, base game mode, world and ped density settings. |
 
