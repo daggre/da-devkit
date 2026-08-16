@@ -125,7 +125,21 @@ scenario config you can drop straight into `da_anims/lib/` and submit back as a 
 
 ## License
 
-See each repository for its license.
+| Resource | License |
+|---|---|
+| `da_log`, `da_lib`, `da_anims`, `da_props`, `da_game` | **MIT** |
+| `da_dev` | **GPL-3.0** |
+| This repo (docs and packaging) | **MIT** |
+
+`da_dev` is GPL because it bundles
+[object_gizmo](https://github.com/DemiAutomatic/object_gizmo) by DemiAutomatic
+(GPL-3.0) for its transform gizmo — see
+[`da_dev/NOTICE.md`](https://github.com/daggre/da_dev/blob/main/NOTICE.md).
+
+**This does not affect the resources you ship on a server.** Copyleft flows from the
+GPL code to works built on it, not backwards to its dependencies: `da_dev` depends on
+`da_lib`, not the other way around. Everything in your runtime is MIT, and `da_dev` is
+a development tool that stops itself in production anyway.
 
 ---
 
