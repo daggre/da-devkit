@@ -91,7 +91,8 @@ da devkit — bundle $VERSION
 da_dev is included but DISABLED by default — it stops itself at boot and is never
 sent to clients. Read SECURITY.md before turning it on.
 
-https://github.com/$GH_ORG/da-devkit
+Docs and releases:  https://github.com/$GH_ORG/da-devkit
+Help and questions: https://discord.com/invite/JgteBpXGaA  (da.dev Discord)
 EOF
 
 # Release notes stub with the exact versions this bundle contains. Written only if the

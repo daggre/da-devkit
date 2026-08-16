@@ -5,6 +5,9 @@
 #     exec resources/[da]/da_resources.cfg
 #
 # Everything below is then in one place, with the load order already correct.
+#
+# Docs:  https://github.com/daggre/da-devkit
+# Help:  https://discord.com/invite/JgteBpXGaA  (da.dev Discord)
 
 
 # --- development tools ----------------------------------------------------

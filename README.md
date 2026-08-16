@@ -9,7 +9,7 @@ animations, and place props from inside the game — then ship what you built.
 
 Free and open source. No escrow, no keymaster, no license key.
 
-**Current release: [1.0.0](https://github.com/daggre/da-devkit/releases)**
+**Current release: [1.0.0](https://github.com/daggre/da-devkit/releases)** · **Help and questions: [da.dev Discord](https://discord.com/invite/JgteBpXGaA)**
 
 ---
 
@@ -114,11 +114,16 @@ Each resource has its own README. For writing animations, start with
 - Lua 5.4 — enabled per-resource, nothing to configure
 - No framework required. VORP is supported if you use it.
 
+## Support
+
+The **[da.dev Discord](https://discord.com/invite/JgteBpXGaA)** is the fastest way to get
+help — setup problems, "why isn't this in my menu", or anything the docs don't cover.
+
 ## Contributing
 
 Bug reports and pull requests go on the individual resource repos. General questions
 and "which resource should I use" belong in
-[Discussions](https://github.com/daggre/da-devkit/discussions) here.
+[Discussions](https://github.com/daggre/da-devkit/discussions) here, or the Discord.
 
 The animation library is built to be extended — `da_dev`'s animation editor exports a
 scenario config you can drop straight into `da_anims/lib/` and submit back as a pack.
