@@ -1,0 +1,49 @@
+# da devkit — resource configuration
+#
+# Ships as [da]/da_resources.cfg. Add one line to your server.cfg:
+#
+#     exec resources/[da]/da_resources.cfg
+#
+# Everything below is then in one place, with the load order already correct.
+
+
+# --- development tools ----------------------------------------------------
+# READ SECURITY.md BEFORE CHANGING THIS.
+#
+# da_dev grants freecam, teleport, entity spawning and scene editing. It is
+# deny-by-default: at 0 the resource stops itself at boot and is never sent to
+# connecting clients, so the same [da] folder is safe on dev and production.
+#
+#   0  (default) resource stops at boot.            <- production
+#   1            runs, each player needs the ACE.   <- shared dev server
+#   2            runs, everyone allowed.            <- solo/local dev only
+
+setr da_dev_enabled 0
+
+# On a shared dev server, grant per player:
+#add_ace group.admin da_dev allow
+#add_ace identifier.license:PUT_LICENSE_HERE da_dev allow
+
+
+# --- resources ------------------------------------------------------------
+# Order matters: da_log and da_lib must start before anything that uses them.
+
+ensure da_props         # prop models (stream-only)
+ensure da_log           # required
+ensure da_lib           # required
+ensure da_dev           # dev kit — gated by da_dev_enabled above
+ensure da_anims         # animation scenarios — press X in game
+ensure da_game          # HUD context, game mode, world density
+
+
+# --- logging --------------------------------------------------------------
+# 1 enables debug-level logging across every da_ resource. Verbose. Leave off in
+# production. You can also set a level at runtime: `log set da_lib debug`
+
+setr debug 0
+
+
+# --- framework ------------------------------------------------------------
+# da_lib ships a framework adapter. Leave commented for standalone.
+
+#setr framework "VORP"
